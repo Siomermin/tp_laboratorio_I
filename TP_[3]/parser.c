@@ -22,11 +22,6 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 					retorno = FUNCIONO;
 				}
 			}
-			//else
-			//{
-				//break;
-			//}
-
 		}while(!feof(pFile));
 	}
     return retorno;
@@ -68,6 +63,7 @@ int parser_SaveEmployeeToText(FILE* pFile , LinkedList* pArrayListEmployee)
 	{
 		len = ll_len(pArrayListEmployee);
 
+		fprintf(pFile, "%s, %s, %s, %s\n", "Id", "Nombre", "HorasTrabajadas", "Sueldo");
 		for(i=0;i<len;i++)
 		{
 			empleadoAux = (Employee*)ll_get(pArrayListEmployee, i);
